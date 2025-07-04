@@ -42,7 +42,7 @@ from deploy import deploy
 
 model_uri = dbutils.jobs.taskValues.get("Train", "model_uri", debugValue="")
 env = dbutils.widgets.get("env")
-assert env != "None", "env notebook parameter must be specified"
+assert env != "None", "env notebook parameter must be specified once the model is trained"
 assert model_uri != "", "model_uri notebook parameter must be specified"
 deploy(model_uri, env)
 
